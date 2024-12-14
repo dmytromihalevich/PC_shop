@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "name": "ПК для ігор",
+        "description": "Цей ПК підходить для всіх типів робіт, від офісних завдань до потужних ігор.",
+        "price": "20,000 грн",
+        "image": "https://via.placeholder.com/250x250?text=ПК+для+Ігор",
+        "link": "pc.html"
+    },
+    {
+        "id": 2,
+        "name": "Ноутбук MSI",
+        "description": "Сучасний і потужний ноутбук для роботи та розваг.",
+        "price": "35,000 грн",
+        "image": "https://via.placeholder.com/250x250?text=Ноутбук+MSI",
+        "link": "pc.html"
+    },
+    {
+        "id": 3,
+        "name": "Стаціонарний ПК",
+        "description": "Ідеальний комп'ютер для дому та офісу.",
+        "price": "25,000 грн",
+        "image": "https://via.placeholder.com/250x250?text=Стаціонарний+ПК",
+        "link": "pc.html"
+    },
+    {
+        "id": 4,
+        "name": "Ноутбук Acer",
+        "description": "Легкий і портативний ноутбук для щоденних завдань.",
+        "price": "18,000 грн",
+        "image": "https://via.placeholder.com/250x250?text=Ноутбук+Acer",
+        "link": "pc.html"
+    }
+]

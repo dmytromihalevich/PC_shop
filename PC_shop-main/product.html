@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товарів</title>
+    <link rel="stylesheet" href="Products/product.css">
+</head>
+<body>
+
+    <div class="catalog-container">
+        <h1>Каталог товарів</h1>
+        <div id="product-list" class="product-list">
+            <!-- Продукти будуть завантажені через JavaScript -->
+        </div>
+    </div>
+
+    <script src="Product/product.js"></script>
+    <script>
+        // Дані для кількох товарів
+        const productsData = [
+            {
+                name: "ПК для Ігор та Роботи",
+                price: "20,000 грн",
+                image: "https://via.placeholder.com/600x400.png?text=ПК+система",
+                description: "Цей ПК підходить для всіх типів робіт, від офісних завдань до потужних ігор.",
+                specs: [
+                    { label: "Процесор", value: "Intel Core i7 12700K" },
+                    { label: "Оперативна пам'ять", value: "16GB DDR4" },
+                    { label: "Графічна карта", value: "NVIDIA GeForce RTX 3060" },
+                    { label: "Зберігання", value: "1TB SSD" },
+                    { label: "Операційна система", value: "Windows 11 Pro" },
+                    { label: "Гарантія", value: "2 роки" }
+                ],
+                detailPageUrl: "pc-detail.html"  // URL для детальної сторінки
+            },
+            // Інші продукти
+        ];
+
+        // Функція для оновлення інформації на сторінці
+        function updateProductDetails() {
+            const productList = document.getElementById('product-list');
+            
+            // Очищаємо існуючі товари на сторінці
+            productList.innerHTML = '';
+
+            // Додаємо товари на сторінку
+            productsData.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.classList.add('product-card');
+                
+                productCard.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h3>${product.name}</h3>
+                    <p>${product.description}</p>
+                    <p class="price">${product.price}</p>
+                    <ul>
+                        ${product.specs.map(spec => `<li><strong>${spec.label}</strong>: ${spec.value}</li>`).join('')}
+                    </ul>
+                    <a class="button_choise" href="${product.detailPageUrl}" target="_blank">Переглянути</a>
+                `;
+                productList.appendChild(productCard);
+            });
+        }
+
+        // Викликаємо функцію для оновлення сторінки
+        updateProductDetails();
+    </script>
+
+</body>
+</html>
+
+
+</body>
+</html>
