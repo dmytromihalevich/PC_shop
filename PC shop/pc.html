@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="PC/pc.css">
+  <title>Товарна картка</title>
+</head>
+<body>
+    <header>
+        <div class="logo">ПК Магазин</div>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="pc.html">Комп'ютери</a>
+            <a href="#">Ноутбуки</a>
+            <a href="cart.html">Кошик</a>
+        </nav>
+    </header>
+
+<div class="container">
+
+    <!-- ПК №1 -->
+    <div class="product-card">
+      <div class="badge">АКЦІЯ</div>
+      <div class="favorite">❤</div>
+      <div class="product-image">
+        <img src="https://content1.rozetka.com.ua/goods/images/big/455712117.jpg" alt="ПК 1">
+      </div>
+      <div class="product-name">Ігровий ПК MSI MAG Infinite S3</div>
+      <div class="rating">★★★★☆ (12)</div>
+      <div class="old-price">45 999 ₴</div>
+      <div class="price">39 999 ₴</div>
+      <div class="features">
+        Intel Core i7-12700F / RAM 16 ГБ / SSD 1 ТБ / RTX 3060 Ti
+      </div>
+      <a href="#" class="add-to-cart">Купити</a>
+    </div>
+  
+    <!-- ПК №2 -->
+    <div class="product-card">
+      <div class="badge">АКЦІЯ</div>
+      <div class="favorite">❤</div>
+      <div class="product-image">
+        <img src="https://dlcdnwebimgs.asus.com/gain/E7792635-ADCB-4719-B80E-643503EEB82C" alt="ПК 2">
+      </div>
+      <div class="product-name">ПК ASUS ROG Strix G10</div>
+      <div class="rating">★★★★★ (20)</div>
+      <div class="old-price">49 999 ₴</div>
+      <div class="price">42 499 ₴</div>
+      <div class="features">
+        AMD Ryzen 7 5800X / RAM 16 ГБ / SSD 1 ТБ / GeForce RTX 3070
+      </div>
+      <a href="#" class="add-to-cart">Купити</a>
+    </div>
+  
+    <!-- ПК №3 -->
+    <div class="product-card">
+      <div class="badge">АКЦІЯ</div>
+      <div class="favorite">❤</div>
+      <div class="product-image">
+        <img src="https://p4-ofp.static.pub/ShareResource/na/subseries/hero/lenovo-legion-tower-5-05.png" alt="ПК 3">
+      </div>
+      <div class="product-name">Lenovo Legion Tower 5</div>
+      <div class="rating">★★★★☆ (18)</div>
+      <div class="old-price">41 999 ₴</div>
+      <div class="price">37 499 ₴</div>
+      <div class="features">
+        Intel Core i5-11400F / RAM 16 ГБ / SSD 512 ГБ / RTX 3060
+      </div>
+      <a href="#" class="add-to-cart">Купити</a>
+    </div>
+  
+    <!-- ПК №4 -->
+    <div class="product-card">
+      <div class="badge">АКЦІЯ</div>
+      <div class="favorite">❤</div>
+      <div class="product-image">
+        <img src="https://kievmag.com.ua/image/cache/catalog/11/11/hpa/8a-680x630.jpg" alt="ПК 4">
+      </div>
+      <div class="product-name">Acer Predator Orion 3000</div>
+      <div class="rating">★★★★★ (15)</div>
+      <div class="old-price">54 999 ₴</div>
+      <div class="price">48 999 ₴</div>
+      <div class="features">
+        Intel Core i7-12700F / RAM 32 ГБ / SSD 1 ТБ / GeForce RTX 3080
+      </div>
+      <a href="#" class="add-to-cart">Купити</a>
+    </div>
+  
+  </div>
+<footer>
+    <p>© 2024 ПК Магазин | Всі права захищені</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+crossorigin="anonymous"></script>
+<script>
+    // Отримуємо всі кнопки "Купити"
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    
+    // Обробник події для кнопок
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function (event) {
+        const productCard = event.target.closest('.product-card');
+        
+        // Збираємо інформацію про товар
+        const product = {
+          name: productCard.querySelector('.product-name').innerText,
+          price: productCard.querySelector('.price').innerText,
+          image: productCard.querySelector('.product-image img').src,
+        };
+  
+        // Зберігаємо товар у локальному сховищі (можна використовувати масив, локальне сховище або інші методи)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(product);
+        localStorage.setItem('cart', JSON.stringify(cart));
+  
+        // Можна додавати сповіщення або змінювати стиль кнопки (наприклад, змінити текст на "Додано в кошик")
+        event.target.innerText = 'Додано в кошик';
+      });
+    });
+  </script>
+  
+<script src="js/script.js"></script>
+</body>
+</html>

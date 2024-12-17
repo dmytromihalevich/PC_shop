@@ -1,0 +1,31 @@
+[
+    {
+      "id": "1",
+      "title": "Ігровий ПК MSI MAG Infinite S3",
+      "price": 39999,
+      "image": "pc1.jpg",
+      "description": "Потужний ігровий ПК з процесором Intel Core i7 та відеокартою NVIDIA RTX 3060."
+    },
+    {
+      "id": "2",
+      "title": "ПК ASUS ROG Strix G10",
+      "price": 42499,
+      "image": "pc2.jpg",
+      "description": "Стильний та продуктивний ПК для ігор та роботи з AMD Ryzen 7 та RTX 3070."
+    },
+    {
+      "id": "3",
+      "title": "Lenovo Legion Tower 5",
+      "price": 37499,
+      "image": "pc3.jpg",
+      "description": "Ігровий комп'ютер з великим запасом потужності завдяки AMD Ryzen 5 та RTX 3060 Ti."
+    },
+    {
+      "id": "4",
+      "title": "Acer Predator Orion 3000",
+      "price": 40999,
+      "image": "pc4.jpg",
+      "description": "Компактний та потужний ПК з Intel Core i5 та відеокартою NVIDIA GTX 1660 Super."
+    }
+  ]
+  
