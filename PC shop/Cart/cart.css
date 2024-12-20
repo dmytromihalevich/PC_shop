@@ -7,7 +7,6 @@ body, html {
     background-color: #8538F2;
 }
 
-/* Встановлюємо контейнер на всю ширину екрану */
 .container-fluid {
     width: 100%;
     padding: 0;
@@ -112,4 +111,109 @@ footer {
   .cart-item-actions button:hover {
     background-color: #ff4500;
   }
+  .clear-cart {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+  }
   
+  .clear-cart:hover {
+    background-color: #ff4500;
+  }
+  /* Основна стилізація для кнопок */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.cart-actions button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.clear-cart {
+  background-color: #f44336;
+  color: white;
+}
+
+.checkout {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Модальне вікно */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  text-align: center;
+}
+
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.submit-order {
+  background-color: #4caf50;
+  color: white;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.submit-order:hover {
+  background-color: #45a049;
+}
+

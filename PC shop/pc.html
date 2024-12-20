@@ -12,7 +12,7 @@
         <nav>
             <a href="index.html">Головна</a>
             <a href="pc.html">Комп'ютери</a>
-            <a href="#">Ноутбуки</a>
+            <a href="lab.html">Ноутбуки</a>
             <a href="cart.html">Кошик</a>
         </nav>
     </header>
@@ -95,27 +95,22 @@
 integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 crossorigin="anonymous"></script>
 <script>
-    // Отримуємо всі кнопки "Купити"
     const addToCartButtons = document.querySelectorAll('.add-to-cart');
     
-    // Обробник події для кнопок
     addToCartButtons.forEach(button => {
       button.addEventListener('click', function (event) {
         const productCard = event.target.closest('.product-card');
         
-        // Збираємо інформацію про товар
         const product = {
           name: productCard.querySelector('.product-name').innerText,
           price: productCard.querySelector('.price').innerText,
           image: productCard.querySelector('.product-image img').src,
         };
   
-        // Зберігаємо товар у локальному сховищі (можна використовувати масив, локальне сховище або інші методи)
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         cart.push(product);
         localStorage.setItem('cart', JSON.stringify(cart));
   
-        // Можна додавати сповіщення або змінювати стиль кнопки (наприклад, змінити текст на "Додано в кошик")
         event.target.innerText = 'Додано в кошик';
       });
     });

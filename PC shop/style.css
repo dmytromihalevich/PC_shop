@@ -1,4 +1,4 @@
-/* Основні стилі для контейнера */
+
 body, html {
     margin: 0;
     padding: 0;
@@ -8,13 +8,11 @@ body, html {
     background-color: #8538F2;
 }
 
-/* Встановлюємо контейнер на всю ширину екрану */
 .container-fluid {
     width: 100%;
     padding: 0;
 }
 
-/* Стиль для хедера */
 header {
     background-color: #333;
     color: white;
@@ -22,7 +20,6 @@ header {
     text-align: center;
 }
 
-/* Стилі для навігаційного меню */
 nav {
     text-align: center;
     background-color: #f4f4f4;
@@ -36,7 +33,6 @@ nav a {
     font-weight: bold;
 }
 
-/* Банер */
 .banner {
     background-color: #4CAF50;
     color: white;
@@ -53,7 +49,6 @@ nav a {
     font-size: 1.5em;
 }
 
-/* Стилі для категорій товарів */
 .categories {
     display: flex;
     flex-wrap: wrap;
@@ -106,7 +101,6 @@ background-color: rgb(255, 255, 255);
     display: inline-block;
 }
 
-/* Футер */
 footer {
     background-color: #333;
     color: white;

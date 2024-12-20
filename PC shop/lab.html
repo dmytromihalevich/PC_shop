@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Lap/lap.css">
+  <title>Ноутбуки</title>
+</head>
+<body>
+    <header>
+        <div class="logo">ПК Магазин</div>
+        <nav>
+            <a href="index.html">Головна</a>
+            <a href="pc.html">Комп'ютери</a>
+            <a href="lab.html">Ноутбуки</a>
+            <a href="cart.html">Кошик</a>
+        </nav>
+    </header>
+
+    <div class="container">
+      <!-- Ноутбук №1 -->
+      <div class="product-card">
+        <div class="badge">АКЦІЯ</div>
+        <div class="favorite">❤</div>
+        <div class="product-image">
+          <img src="https://kvshop.com.ua/users/products/219/219794/big/lenovo-ideapad-3-15itl6-82h800umra-d2.jpg" alt="Ноутбук 1">
+        </div>
+        <div class="product-name">Ноутбук Lenovo IdeaPad 3</div>
+        <div class="rating">★★★★☆ (15)</div>
+        <div class="old-price">20 999 ₴</div>
+        <div class="price">18 999 ₴</div>
+        <div class="features">Intel Core i5 / RAM 8 ГБ / SSD 512 ГБ</div>
+        <button class="add-to-cart">Купити</button>
+      </div>
+
+      <div class="product-card">
+        <div class="badge">АКЦІЯ</div>
+        <div class="favorite">❤</div>
+        <div class="product-image">
+          <img src="https://content.rozetka.com.ua/goods/images/big/392574378.jpg" alt="Ноутбук 1">
+        </div>
+        <div class="product-name">Ноутбук ASUS VivoBook</div>
+        <div class="rating">★★★★★ (20)</div>
+        <div class="old-price">24 999 ₴</div>
+        <div class="price">22 999 ₴</div>
+        <div class="features">Intel Core i7 / RAM 16 ГБ / SSD 1 ТБ</div>
+        <button class="add-to-cart">Купити</button>
+      </div>
+      
+      <div class="product-card">
+        <div class="badge">НОВИНКА</div>
+        <div class="favorite">❤</div>
+        <div class="product-image">
+          <img src="https://defis.ua/image/cache/catalog/2/22/22775_1-500x500.jpg" alt="Ноутбук 2">
+        </div>
+        <div class="product-name">Ноутбук HP Pavilion 15</div>
+        <div class="rating">★★★★☆ (18)</div>
+        <div class="old-price">27 499 ₴</div>
+        <div class="price">25 499 ₴</div>
+        <div class="features">Intel Core i5 / RAM 16 ГБ / SSD 512 ГБ</div>
+        <button class="add-to-cart">Купити</button>
+      </div>
+
+      <div class="product-card">
+        <div class="badge">ХІТ ПРОДАЖУ</div>
+        <div class="favorite">❤</div>
+        <div class="product-image">
+          <img src="https://content1.rozetka.com.ua/goods/images/big/464686337.jpg" alt="Ноутбук Dell Inspiron 15">
+        </div>
+        <div class="product-name">Ноутбук Dell Inspiron 15</div>
+        <div class="rating">★★★★☆ (30)</div>
+        <div class="old-price">22 999 ₴</div>
+        <div class="price">20 499 ₴</div>
+        <div class="features">Intel Core i5 / RAM 16 ГБ / SSD 512 ГБ</div>
+        <button class="add-to-cart">Купити</button>
+      </div>
+      
+      
+
+    <footer>
+        <p>© 2024 ПК Магазин | Всі права захищені</p>
+    </footer>
+
+    <script>
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        
+        addToCartButtons.forEach(button => {
+          button.addEventListener('click', function (event) {
+            const productCard = event.target.closest('.product-card');
+            
+            const product = {
+              name: productCard.querySelector('.product-name').innerText,
+              price: productCard.querySelector('.price').innerText,
+              image: productCard.querySelector('.product-image img').src,
+            };
+      
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(product);
+            localStorage.setItem('cart', JSON.stringify(cart));
+      
+
+            event.target.innerText = 'Додано в кошик';
+          });
+        });
+      </script>
+      
+    <script src="js/script.js"></script>
+</body>
+</html>

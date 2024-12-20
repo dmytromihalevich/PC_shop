@@ -1,4 +1,4 @@
-// Данні ПК
+
 const pcData = {
     name: "ПК для Ігор та Роботи",
     price: "20,000 грн",
@@ -14,18 +14,13 @@ const pcData = {
     description: "Цей ПК підходить для всіх типів робіт, від офісних завдань до потужних ігор. Завдяки найсучаснішим компонентам ви зможете працювати і грати на найвищих налаштуваннях."
 };
 
-// Функція для оновлення інформації на сторінці
 function updatePCDetails() {
-    // Оновлення назви
     document.getElementById('pc-name').textContent = pcData.name;
 
-    // Оновлення ціни
     document.getElementById('pc-price').textContent = `Ціна: ${pcData.price}`;
 
-    // Оновлення зображення
     document.getElementById('pc-image').src = pcData.image;
 
-    // Оновлення характеристик
     const specsList = document.getElementById('pc-specs');
     pcData.specs.forEach(spec => {
         const li = document.createElement('li');
@@ -33,14 +28,11 @@ function updatePCDetails() {
         specsList.appendChild(li);
     });
 
-    // Оновлення опису
     document.getElementById('pc-description').textContent = pcData.description;
 }
 
-// Функція для додавання в кошик
 function addToCart() {
     alert(`${pcData.name} додано в кошик!`);
 }
 
-// Викликаємо функцію для оновлення сторінки
 updatePCDetails();

@@ -22,18 +22,47 @@
         <nav>
             <a href="index.html">Головна</a>
             <a href="pc.html">Комп'ютери</a>
-            <a href="#">Ноутбуки</a>
+            <a href="lab.html">Ноутбуки</a>
             <a href="cart.html">Кошик</a>
         </nav>
     </header>
-    <main class="container">
-        <h1 class="banner">Кошик</h1>
+  <div class="container">
+   <div class="cart-container">
+  <h2>Ваш кошик</h2>
+  <div class="cart-items">
 
-        <div class="сart-list">
-            
-        </div>
+  </div>
+    <div class="cart-actions">
+      <button class="clear-cart">Очистити кошик</button>
+      <button class="checkout">Оформити замовлення</button>
+    </div>
+  </div>
+</div> 
 
-    </main>
+<div class="modal" id="checkout-modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>Оформлення замовлення</h2>
+    <form id="checkout-form">
+      <label for="name">Ім'я</label>
+      <input type="text" id="name" name="name" placeholder="Ваше ім'я" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Ваш Email" required>
+
+      <label for="phone">Телефон</label>
+      <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" required>
+
+      <label for="address">Адреса доставки</label>
+      <input type="text" id="address" name="address" placeholder="Ваша адреса" required>
+
+      <button type="submit" class="submit-order">Підтвердити замовлення</button>
+    </form>
+  </div>
+</div>
+
+
+    
     <footer>
         <p>© 2024 ПК Магазин | Всі права захищені</p>
     </footer>
@@ -43,34 +72,56 @@
         crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script>
-        // Завантажуємо кошик з локального сховища
-        window.addEventListener('load', function () {
-          const cart = JSON.parse(localStorage.getItem('cart')) || [];
-          const cartList = document.querySelector('.сart-list');
-          
-          // Перевіряємо, чи є товари в кошику
-          if (cart.length > 0) {
-            cart.forEach(product => {
-              const productElement = document.createElement('div');
-              productElement.classList.add('cart-item');
-              
-              // Створюємо HTML елементи для кожного товару
-              productElement.innerHTML = `
-                <img src="${product.image}" alt="${product.name}">
-                <div class="cart-item-details">
-                  <h5>${product.name}</h5>
-                  <p>${product.price}</p>
-                </div>
-              `;
-              
-              // Додаємо товар в кошик
-              cartList.appendChild(productElement);
+
+      window.addEventListener('load', function () {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartList = document.querySelector('.cart-list');
+        const clearCartButton = document.querySelector('.clear-cart');
+        
+
+        if (cart.length > 0) {
+          cart.forEach(product => {
+            const productElement = document.createElement('div');
+            productElement.classList.add('cart-item');
+            
+
+            productElement.innerHTML = `
+              <img src="${product.image}" alt="${product.name}">
+              <div class="cart-item-details">
+                <h5>${product.name}</h5>
+                <p>${product.price}</p>
+                <p>${product.features}</p>
+              </div>
+              <div class="cart-item-actions">
+                <button class="remove-from-cart">Видалити</button>
+              </div>
+            `;
+            
+            
+
+            cartList.appendChild(productElement);
+    
+
+            productElement.querySelector('.remove-from-cart').addEventListener('click', function () {
+              const updatedCart = cart.filter(item => item.name !== product.name);
+              localStorage.setItem('cart', JSON.stringify(updatedCart));
+              window.location.reload();
             });
-          } else {
-            cartList.innerHTML = '<p>Ваш кошик порожній.</p>';
-          }
+          });
+        } else {
+          cartList.innerHTML = '<p>Ваш кошик порожній.</p>';
+        }
+        
+    
+
+        clearCartButton.addEventListener('click', function () {
+          localStorage.removeItem('cart');
+          window.location.reload(); 
         });
-      </script>
+      });
+      
+    </script>
+    
 </body>
 
 </html>
